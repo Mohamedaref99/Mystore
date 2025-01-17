@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- الرأس -->
     <header>
-        <h1>Your Shopping Cart</h1>
-        <button onclick="window.location.href='index.html'">Continue Shopping</button>
+        <h1>Your Cart</h1>
     </header>
-
-    <main id="cart-items">
-        <!-- Cart items will be dynamically added here -->
+    
+    <!-- محتويات السلة -->
+    <main>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+        <button onclick="clearCart()">Clear Cart</button>
     </main>
-
+    
+    <!-- الفوتر -->
     <footer>
         <p>&copy; 2025 My Store</p>
-        <button onclick="clearCart()">Clear Cart</button>
+        <a href="index.html">Back to Store</a>
     </footer>
-
-    <script src="js/cart.js"></script>
+    
+    <!-- ملف JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
