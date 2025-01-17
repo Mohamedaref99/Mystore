@@ -11,8 +11,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 200%;
+    height: 200%;
     object-fit: cover;
     z-index: -1;
     opacity: 0.8;
@@ -36,7 +36,7 @@ h1, h2 {
 /* تصميم المنتجات */
 .product {
     display: inline-block;
-    width: 30%; /* كل منتج يأخذ 30% من العرض */
+    width: 20%; /* كل منتج يأخذ 30% من العرض */
     margin: 1%;
     padding: 15px;
     background-color: white;
@@ -47,7 +47,7 @@ h1, h2 {
 
 /* التحكم في الصور */
 .product img {
-    max-width: 100%; /* الصورة لا تتجاوز حجم الإطار */
+    max-width: 50%; /* الصورة لا تتجاوز حجم الإطار */
     height: auto; /* تحافظ على الأبعاد النسبية */
     max-height: 200px; /* لتجنب الصور الطويلة جدًا */
     border-radius: 5px;
