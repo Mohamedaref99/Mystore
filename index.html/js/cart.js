@@ -1,50 +1,36 @@
-// Load cart items from localStorage
-function loadCartItems() {
+function displayCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';
+    let cartItems = document.getElementById('cart-items');
+    let cartTotal = document.getElementById('cart-total');
 
-    if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
-        return;
-    }
+    cartItems.innerHTML = '';
+    let total = 0;
 
-    cart.forEach(item => {
-        let itemDiv = document.createElement('div');
-        itemDiv.classList.add('cart-item');
-        itemDiv.innerHTML = `
-            <h3>${item.name}</h3>
-            <p>Price: $${item.price}</p>
-            <p>Quantity: <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${item.name}', this.value)"></p>
-            <button onclick="removeFromCart('${item.name}')">Remove</button>
+    cart.forEach((item, index) => {
+        let cartItem = document.createElement('div');
+        cartItem.innerHTML = `
+            <p>${item.name} - $${item.price} 
+            <button onclick="removeFromCart(${index})">Remove</button></p>
         `;
-        cartItemsContainer.appendChild(itemDiv);
+        cartItems.appendChild(cartItem);
+        total += item.price;
     });
+
+    cartTotal.innerHTML = `<p>Total: $${total}</p>`;
 }
 
-// Remove item from the cart
-function removeFromCart(productName) {
+function removeFromCart(index) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = cart.filter(item => item.name !== productName);
+    cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
-    loadCartItems();
+    displayCart();
 }
 
-// Update item quantity in cart
-function updateQuantity(productName, newQuantity) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const product = cart.find(item => item.name === productName);
-    if (product) {
-        product.quantity = parseInt(newQuantity);
-        localStorage.setItem('cart', JSON.stringify(cart));
-    }
-}
-
-// Clear the cart
 function clearCart() {
     localStorage.removeItem('cart');
-    loadCartItems();
+    displayCart();
 }
 
-// Initial call to load cart items when the page loads
-window.onload = loadCartItems;
+if (window.location.pathname.includes('cart.html')) {
+    displayCart();
+}
