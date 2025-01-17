@@ -1,11 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
+    <!-- فيديو الخلفية -->
     <video autoplay muted loop id="background-video">
         <source src="images/background.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    
+    <!-- الرأس -->
     <header>
         <h1>Welcome to My Store</h1>
     </header>
+    
+    <!-- المنتجات -->
     <main>
         <div class="product">
             <img src="images/product1.jpg" alt="Product 1">
@@ -20,7 +33,13 @@
             <button onclick="addToCart('Watch', 100)">Add to Cart</button>
         </div>
     </main>
+    
+    <!-- الفوتر -->
     <footer>
         <p>&copy; 2025 My Store</p>
     </footer>
+    
+    <!-- ملف JavaScript -->
+    <script src="script.js"></script>
 </body>
+</html>
