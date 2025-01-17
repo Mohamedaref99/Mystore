@@ -14,7 +14,7 @@ body {
     width: 200%;
     height: 200%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -2;
     opacity: 0.8;
 }
 
@@ -29,20 +29,20 @@ header {
 /* العناوين */
 h1, h2 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: center;
 }
 
 /* تصميم المنتجات */
 .product {
     display: inline-block;
-    width: 20%; /* كل منتج يأخذ 30% من العرض */
-    margin: 1%;
+    width: 30%; /* كل منتج يأخذ 30% من العرض */
+    margin: 5%;
     padding: 15px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 /* التحكم في الصور */
