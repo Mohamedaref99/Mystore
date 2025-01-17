@@ -7,23 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- زر عرض السلة -->
-    <button class="cart-button" onclick="window.location.href='cart.html'">View Cart</button>
-
     <!-- فيديو الخلفية -->
     <div class="video-container">
         <video autoplay muted loop id="background-video">
             <source src="images/background.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="overlay"></div>
     </div>
 
     <!-- الرأس -->
     <header>
-        <h1>Welcome to My Store</h1>
+        <h1>My Store</h1>
+        <nav>
+            <a href="cart.html">View Cart</a>
+        </nav>
     </header>
-    
+
     <!-- المنتجات -->
     <main class="products-container">
         <div class="product">
@@ -39,13 +38,13 @@
             <button onclick="addToCart('Watch', 100)">Add to Cart</button>
         </div>
     </main>
-    
+
     <!-- الفوتر -->
     <footer>
         <p>&copy; 2025 My Store</p>
     </footer>
-    
+
     <!-- ملفات JavaScript -->
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
